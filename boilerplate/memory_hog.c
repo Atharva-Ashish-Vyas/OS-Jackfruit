@@ -40,7 +40,7 @@ static useconds_t parse_sleep_ms(const char *arg, useconds_t fallback)
 
 int main(int argc, char *argv[])
 {
-    const size_t chunk_mb = (argc > 1) ? parse_size_mb(argv[1], 8) : 8;
+    const size_t chunk_mb    = (argc > 1) ? parse_size_mb(argv[1], 8)       : 8;
     const useconds_t sleep_us = (argc > 2) ? parse_sleep_ms(argv[2], 1000U) : 1000U * 1000U;
     const size_t chunk_bytes = chunk_mb * 1024U * 1024U;
     int count = 0;

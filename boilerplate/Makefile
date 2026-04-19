@@ -17,7 +17,7 @@ ci: $(USER_TARGETS)
 module: monitor.ko
 
 engine: engine.c monitor_ioctl.h
-	gcc -O2 -Wall -Wextra -o engine engine.c -lpthread
+	gcc -O2 -std=gnu11 -Wall -Wextra -Wno-unused-function -Wno-unused-variable -o engine engine.c -lpthread
 
 memory_hog: memory_hog.c
 	gcc -O2 -Wall $(WORKLOAD_LDFLAGS) -o memory_hog memory_hog.c
